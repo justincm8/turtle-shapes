@@ -252,10 +252,10 @@ public class TurtleWrapper {
     }
 
     /**
-     * Waits 1 second, clears the screen adn resets the position of the turtle.
+     * Waits 2 seconds, clears the screen adn resets the position of the turtle.
      */
     public static void reset() {
-        wait(1000);
+        wait(2000);
         t.home();
         t.clear();
     }
