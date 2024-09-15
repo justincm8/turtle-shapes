@@ -6,14 +6,15 @@ public class TurtleWrapper {
         t.speed(200);
     }
 
-     /**
+
+    /**
      * Pauses the program for a given amount of time.
-     * 
+     *
      * @param time the time to wait in miliseconds
      */
-    private static void wait(int time) 
+    private static void wait(int time)
     {
-        try 
+        try
         {
             Thread.sleep(time);
         }
@@ -98,7 +99,7 @@ public class TurtleWrapper {
      *
      * @return state change timestamp
      */
-    public long home() {
+    public static long home() {
         return t.home();
     }
 
@@ -109,7 +110,7 @@ public class TurtleWrapper {
      * @param y y coordinate of target location
      * @return state change timestamp
      */
-    public long face(double x, double y) {
+    public static long face(double x, double y) {
         return t.face(x, y);
     }
 
@@ -120,7 +121,7 @@ public class TurtleWrapper {
      * @param y y coordinate of target location
      * @return angle in degrees where 0<=angle<360
      */
-    public double towards(double x, double y) {
+    public static double towards(double x, double y) {
         return t.towards(x, y);
     }
 
@@ -131,7 +132,7 @@ public class TurtleWrapper {
      * @param y y coordinate of target location
      * @return distance between turtle's current location and another position
      */
-    public double distance(double x, double y) {
+    public static double distance(double x, double y) {
         return t.distance(x, y);
     }
 
@@ -140,7 +141,7 @@ public class TurtleWrapper {
      *
      * @return x coordinate
      */
-    public double getX() {
+    public static double getX() {
         return t.getX();
     }
 
@@ -149,7 +150,7 @@ public class TurtleWrapper {
      *
      * @return y coordinate
      */
-    public double getY() {
+    public static double getY() {
         return t.getY();
     }
 
@@ -161,7 +162,7 @@ public class TurtleWrapper {
      * @param direction angle counter-clockwise from east in degrees
      * @return state change timestamp
      */
-    public long setPosition(double x, double y, double direction) {
+    public static long setPosition(double x, double y, double direction) {
         return t.setPosition(x, y, direction);
     }
 
@@ -172,7 +173,7 @@ public class TurtleWrapper {
      * @param y y coordinate
      * @return state change timestamp
      */
-    public long setPosition(double x, double y) {
+    public static long setPosition(double x, double y) {
         return t.setPosition(x, y);
     }
 
@@ -182,7 +183,7 @@ public class TurtleWrapper {
      * @param penWidth width of the turtles path
      * @return state change timestamp
      */
-    public long width(double penWidth) {
+    public static long width(double penWidth) {
         return t.width(penWidth);
     }
 
@@ -191,7 +192,7 @@ public class TurtleWrapper {
      *
      * @return state change timestamp
      */
-    public long up() {
+    public static long up() {
         return t.up();
     }
 
@@ -200,7 +201,7 @@ public class TurtleWrapper {
      *
      * @return state change timestamp
      */
-    public long down() {
+    public static long down() {
         return t.down();
     }
 
@@ -210,7 +211,7 @@ public class TurtleWrapper {
      * @param penColor Color of the turtle's path.
      * @return state change timestamp
      */
-    public long penColor(String penColor) {
+    public static long penColor(String penColor) {
         return t.penColor(penColor);
     }
 
@@ -219,7 +220,7 @@ public class TurtleWrapper {
      *
      * @return state change timestamp
      */
-    public long stamp() {
+    public static long stamp() {
         return t.stamp();
     }
 
@@ -228,7 +229,7 @@ public class TurtleWrapper {
      *
      * @return state change timestamp
      */
-    public long dot() {
+    public static long dot() {
         return t.dot();
     }
 
@@ -238,7 +239,7 @@ public class TurtleWrapper {
      * @param color color of dot
      * @return state change timestamp
      */
-    public long dot(String color) {
+    public static long dot(String color) {
         return t.dot(color);
     }
 
@@ -246,9 +247,17 @@ public class TurtleWrapper {
      * Clears all the drawing that a turtle has done but all the turtle
      * settings remain the same. (color, location, direction, shape)
      */
-    public void clear() {
+    public static void clear() {
         t.clear();
     }
 
+    /**
+     * Waits 1 second, clears the screen adn resets the position of the turtle.
+     */
+    public static void reset() {
+        wait(1000);
+        t.home();
+        t.clear();
+    }
 
 }
