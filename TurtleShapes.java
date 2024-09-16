@@ -1,6 +1,7 @@
 import static twrapper.TurtleWrapper.*;
 
 void main() {
+    System.out.println("Hello");
     penColor("red");
     speed(150);
 
